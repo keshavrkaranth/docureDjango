@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content">
+	<div class="container-fluid">
+
+		<div class="row">
+
+			<div class="col-md-7 col-lg-9 col-xl-9">
+				<div class="card">
+					<div class="card-body product-description">
+						<div class="doctor-widget">
+							<div class="doc-info-left">
+								<div class="doctor-img1">
+									<img src="{{single_product.image.url}}" class="img-fluid" alt="User Image"
+										style="width: 80px; height:30px;">
+								</div>
+								<div class="doc-info-cont">
+									<h4 class="doc-name mb-2">{{ single_product.product_name }}</h4>
+									<p><span class="text-muted">Manufactured By </span> Hamdard (Wakf) Laboratories</p>
+									<p>{{ single_product.description | safe }}</p>
+									<div class="feature-product pt-4">
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+				<!-- /Doctor Widget -->
+
+				<!-- Doctor Details Tab -->
+				<div class="card">
+					<div class="card-body pt-0">
+
+						<!-- Tab Menu -->
+						<h3 class="pt-4">Product Details</h3>
+						<hr>
+						<!-- /Tab Menu -->
+
+						<!-- Tab Content -->
+						<div class="container">
+							<img src="{{ single_product.facts_img.url }}" alt="Product Details">
+						</div>
+					</div>
+				</div>
+				<!-- /Doctor Details Tab -->
+
+			</div>
+
+			<div class="col-md-5 col-lg-3 col-xl-3 theiaStickySidebar">
+
+				<!-- Right Details -->
+				<div class="card search-filter">
+					<div class="card-body">
+						<div class="clini-infos mt-0">
+							<h2>{{ single_product.price }} <span>&#8377;</h2>
+						</div>
+						<span class="badge badge-primary">In stock</span>
+						<div class="custom-increment pt-4">
+							<div class="input-group1">
+								<span class="input-group-btn float-left">
+									<button type="button" class="quantity-left-minus btn btn-danger btn-number"
+										data-type="minus" data-field="">
+										<span><i class="fas fa-minus"></i></span>
+									</button>
+								</span>
+								<input type="text" id="quantity" name="quantity" class=" input-number" value="10">
+								<span class="input-group-btn float-right">
+									<button type="button" class="quantity-right-plus btn btn-success btn-number"
+										data-type="plus" data-field="">
+										<span><i class="fas fa-plus"></i></span>
+									</button>
+								</span>
+							</div>
+						</div>
+						<div class="clinic-details mt-4">
+							{% if single_product.stock <= 0 %} <center>
+								<h3>Out of Stock</h3>
+								</center>
+								{% else %}
+								{% if in_cart %}
+								<div class="clinic-booking">
+									<center><button class="btn btn-success btn-lg"><span>Added To Cart</span> <i
+												class="fas fa-check"></i></button></center>
+								</div>
+								{% else %}
+								<div class="clinic-booking">
+									<a class="apt-btn" href="{% url 'add_cart' single_product.id %}">Add To Cart</a>
+								</div>
+								{% endif %}
+								{% endif %}
+						</div>
+						<div class="card flex-fill mt-4 mb-0">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">SKU <span class="float-right">201902-0057</span></li>
+								<li class="list-group-item">Pack Size <span class="float-right">100g</span></li>
+								<li class="list-group-item">Unit Count <span class="float-right">200ml</span></li>
+								<li class="list-group-item">Country <span class="float-right">Japan</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="card search-filter">
+					<div class="card-body">
+						<div class="card flex-fill mt-0 mb-0">
+							<ul class="list-group list-group-flush benifits-col">
+								<li class="list-group-item d-flex align-items-center">
+									<div>
+										<i class="fas fa-shipping-fast"></i>
+									</div>
+									<div>
+										Free Shipping<br><span class="text-sm">For orders from $50</span>
+									</div>
+								</li>
+								<li class="list-group-item d-flex align-items-center">
+									<div>
+										<i class="far fa-question-circle"></i>
+									</div>
+									<div>
+										Support 24/7<br><span class="text-sm">Call us anytime</span>
+									</div>
+								</li>
+								<li class="list-group-item d-flex align-items-center">
+									<div>
+										<i class="fas fa-hands"></i>
+									</div>
+									<div>
+										100% Safety<br><span class="text-sm">Only secure payments</span>
+									</div>
+								</li>
+								<li class="list-group-item d-flex align-items-center">
+									<div>
+										<i class="fas fa-tag"></i>
+									</div>
+									<div>
+										Hot Offers<br><span class="text-sm">Discounts up to 90%</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /Right Details -->
+
+			</div>
+
+		</div>
+
+
+
+	</div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+
+	<title>Ayuhealth</title>
+    <!-- CSS -->
+    {% include 'includes/css.html' %}
+
+
+
+</head>
+
+<body>
+
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+
+		<!-- Header -->
+		{% include 'includes/nav.html' %}
+
+
+        <!-- Body -->
+		{% block content %}
+
+		{% endblock %}
+
+		<!-- Footer -->
+		{% include 'includes/footer.html' %}
+
+	</div>
+    <!-- JS -->
+	{% include 'includes/js.html' %}
+
+</body>
+
+
+</html>

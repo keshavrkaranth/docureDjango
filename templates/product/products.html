@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="breadcrumb-bar">
+	<div class="container-fluid">
+		<div class="row align-items-center">
+			<div class="col-md-12 col-12">
+				<nav aria-label="breadcrumb" class="page-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Products</li>
+					</ol>
+				</nav>
+				<h2 class="breadcrumb-title"> <span class="text-small text-white ml-2"> <b>
+							{{ product_count }} Products</b></span></h2>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Page Content -->
+<div class="content">
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-md-5 col-lg-3 col-xl-3 theiaStickySidebar">
+
+				<!-- Search Filter -->
+				<div class="card search-filter">
+					<div class="card-header">
+						<h4 class="card-title mb-0">Filter</h4>
+					</div>
+					<div class="card-body">
+						<!-- <div class="filter-widget">
+									<div class="cal-icon">
+										<input type="text" class="form-control datetimepicker" placeholder="Select Date">
+									</div>
+								</div> -->
+						<div class="filter-widget">
+							<h4>Categories</h4>
+                        <div>
+
+								<label class="custom_check">
+
+									<a href="{% url 'products'  %}"><span></span> All Products</a>
+								</label>
+							</div>
+                            {% for c in links %}
+							<div>
+
+								<label class="custom_check">
+
+									<a href="{% url 'products_category' c.slug %}"><span></span> {{ c.category_name | title }}</a>
+								</label>
+							</div>
+                            {% endfor %}
+
+						</div>
+
+					</div>
+				</div>
+				<!-- /Search Filter -->
+
+			</div>
+
+			<div class="col-md-7 col-lg-9 col-xl-9">
+
+
+				<div class="row">
+
+                    {% if product %}{% for pr in product %}
+					<div class="col-md-12 col-lg-4 col-xl-4 product-custom">
+						<div class="profile-widget">
+							<div class="doc-img">
+								<a href="{% url 'product-description' pr.category.slug pr.slug %}" tabindex="-1">
+									<img class="img-fluid" alt="Product image"
+										src="{{ pr.image.url }}">
+								</a>
+								<a href="javascript:void(0)" class="fav-btn" tabindex="-1">
+									<i class="far fa-bookmark"></i>
+								</a>
+							</div>
+							<div class="pro-content">
+								<h3 class="title pb-4">
+									<a href="{% url 'product-description' pr.category.slug pr.slug %}" tabindex="-1">{{ pr.product_name }}</a>
+								</h3>
+								<div class="row align-items-center">
+									<div class="col-lg-6">
+										<span class="price">{{ pr.price }} <span>&#8377;</span></span>
+
+									</div>
+									<div class="col-lg-6 text-right">
+										<a href="{% url 'add_cart' pr.id %}" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                    {% endfor %}
+
+                    {% else %}
+                        <center>
+                        <div class="container">
+                            <h1 style="color: red">No Products</h1>
+                        </div>
+                        </center>
+                    {% endif %}
+
+
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
