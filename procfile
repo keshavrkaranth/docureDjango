@@ -1,1 +1,1 @@
-web: gunicorn docureapp.wsgi --log-file -
+web : gunicorn Docure.wsgi --log-file -
