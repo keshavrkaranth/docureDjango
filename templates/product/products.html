@@ -39,14 +39,14 @@
 								</div> -->
 						<div class="filter-widget">
 							<h4>Categories</h4>
-                        <div>
+							<div>
 
 								<label class="custom_check">
 
 									<a href="{% url 'products'  %}"><span></span> All Products</a>
 								</label>
 							</div>
-                            {% for c in links %}
+							{% for c in links %}
 							<div>
 
 								<label class="custom_check">
@@ -54,7 +54,7 @@
 									<a href="{% url 'products_category' c.slug %}"><span></span> {{ c.category_name | title }}</a>
 								</label>
 							</div>
-                            {% endfor %}
+							{% endfor %}
 
 						</div>
 
@@ -69,21 +69,22 @@
 
 				<div class="row">
 
-                    {% if product %}{% for pr in product %}
+					{% if product %}{% for pr in product %}
 					<div class="col-md-12 col-lg-4 col-xl-4 product-custom">
 						<div class="profile-widget">
+							{%if pr.image%}
 							<div class="doc-img">
 								<a href="{% url 'product-description' pr.category.slug pr.slug %}" tabindex="-1">
-									<img class="img-fluid" alt="Product image"
-										src="{{ pr.image.url }}">
+									<img class="img-fluid" alt="Product image" src="{{ pr.image.url }}">
 								</a>
 								<a href="javascript:void(0)" class="fav-btn" tabindex="-1">
 									<i class="far fa-bookmark"></i>
 								</a>
 							</div>
+							{%endif%}
 							<div class="pro-content">
 								<h3 class="title pb-4">
-									<a href="{% url 'product-description' pr.category.slug pr.slug %}" tabindex="-1">{{ pr.product_name }}</a>
+									<a href="{% url 'product-description' pr.category.slug pr.slug %}" tabindex="-1">{{pr.product_name}}</a>
 								</h3>
 								<div class="row align-items-center">
 									<div class="col-lg-6">
@@ -91,21 +92,22 @@
 
 									</div>
 									<div class="col-lg-6 text-right">
-										<a href="{% url 'add_cart' pr.id %}" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+										<a href="{% url 'add_cart' pr.id %}" class="cart-icon"><i
+												class="fas fa-shopping-cart"></i></a>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-                    {% endfor %}
+					{% endfor %}
 
-                    {% else %}
-                        <center>
-                        <div class="container">
-                            <h1 style="color: red">No Products</h1>
-                        </div>
-                        </center>
-                    {% endif %}
+					{% else %}
+					<center>
+						<div class="container">
+							<h1 style="color: red">No Products</h1>
+						</div>
+					</center>
+					{% endif %}
 
 
 

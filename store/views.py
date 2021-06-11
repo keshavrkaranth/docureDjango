@@ -12,11 +12,11 @@ def products(request,category_slug=None):
     categories = None
     if category_slug != None:
         categories = get_object_or_404(Category,slug=category_slug)
-        product = Products.objects.filter(category=categories,is_avilable=True)
+        product = Products.objects.filter(category=categories,is_avilable=True).order_by('-created_date')
         product_count = product.count()
     else:
         categories = Category.objects.all()
-        product = Products.objects.all().filter(is_avilable=True,)
+        product = Products.objects.all().filter(is_avilable=True,).order_by('-created_date')
         product_count = product.count()
 
     data = {

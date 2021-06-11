@@ -10,7 +10,7 @@
 						</span>
 					</a>
 					<a href="/" class="navbar-brand logo">
-						<img src="{% static 'assets/img/logo.jpg' %}" class="img-fluid" alt="Logo">
+						<img src="{% static 'assets/img/logo.png' %}" class="img-fluid" alt="Logo">
 					</a>
 				</div>
 				<div class="main-menu-wrapper">
@@ -22,22 +22,79 @@
 							<i class="fas fa-times"></i>
 						</a>
 					</div>
-					<ul class="main-nav">
+					<ul class="main-nav dashboard">
+
+								<li><a href="{% url 'about' %}">About Us</a></li>
+						<li class="has-submenu ">
+								<a href="#">Categories <i class="fas fa-chevron-down"></i></a>
+								<ul class="submenu ">
+									<li class="has-submenu" >
+										<a href="#" >EDIBLE OILS & GHEE</a>
+										<ul class="submenu">
+											<li><a href="{% url 'category_product_description' 'edible-oils-ghee' 'coconut-oil' %}">Coconut Oil</a></li>
+											<li><a href="{% url 'category_product_description' 'edible-oils-ghee' 'ground-nut-oil' %}">Groundnut Oil</a></li>
+											<li><a href="{% url 'category_product_description' 'edible-oils-ghee' 'sesame-oil' %}">Sesame Oil</a></li>
+											<li><a href="{% url 'category_product_description' 'edible-oils-ghee' 'ghee' %}">Pure Desi Ghee</a></li>
+										</ul>
+									</li>
+									<li class="has-submenu">
+										<a href="#">CEREALS AND MILLETS</a>
+										<ul class="submenu">
+											<li><a href="{% url 'category_product_description' 'cereals-and-millets' 'little-millet-same' %}">Little Millet</a></li>
+											<li><a href="{% url 'category_product_description' 'cereals-and-millets' 'kodo-millet-harka' %}">Kodo Millet</a> </li>
+											<li><a href="{% url 'category_product_description' 'cereals-and-millets' 'proso-millet-baragu' %}">Proso Millet</a></li>
+											<li><a href="{% url 'category_product_description' 'cereals-and-millets' 'finger-millet-ragi' %}">Finger Millet</a></li>
+											<li><a href="{% url 'category_product_description' 'cereals-and-millets' 'jowar' %}">Jowar</a></li>
+										</ul>
+									</li>
+									<li class="has-submenu">
+										<a href="#">SPICES</a>
+										<ul class="submenu">
+											<li><a href="{% url 'category_product_description' 'spices' 'cardamom' %}">Cardamom </a></li>
+											<li><a href="{% url 'category_product_description' 'spices' 'cinamon' %}">Cinamon  </a></li>
+											<li><a href="{% url 'category_product_description' 'spices' 'black-pepper' %}">Black Pepper </a></li>
+											<li><a href="{% url 'category_product_description' 'spices' 'cumin' %}">Cumin </a></li>
+											<li><a href="{% url 'category_product_description' 'spices' 'cloves' %}">Cloves </a></li>
+											<li><a href="{% url 'category_product_description' 'spices' 'coriander-powder' %}">Coriander Powder </a></li>
+											<li><a href="{% url 'category_product_description' 'spices' 'mustard-seed' %}">Mustard Seed </a></li>
+										</ul>
+									</li>
+									<li class="has-submenu">
+										<a href="#">DRY FRUITS & HONEY</a>
+										<ul class="submenu">
+											<li><a href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'cashew-nut' %}">Cashew Nuts</a></li>
+											<li><a href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'raisins-kishmish' %}">Raisins (Kishmish)</a></li>
+											<li><a href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'pistachio-nuts' %}">Pistachio Nuts</a></li>
+											<li><a href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'dates' %}">Dates</a></li>
+											<li><a href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'walnuts' %}">Walnuts</a></li>
+											<li><a href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'almonds-badam' %}">Almonds (Badam)</a></li>
+											<li><a href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'honey' %}">Honey</a></li>
+										</ul>
+									</li>
+									<li class="has-submenu">
+										<a href="#">HEALTH MIX AND  SNACKS </a>
+										<ul class="submenu">
+											<li><a href="{% url 'category_product_description' 'health-mix-and-healthy-snacks' 'mixed-millets-powder' %}">Mixed Millets Powder</a></li>
+										</ul>
+									</li>
+									<li class="has-submenu">
+										<a href="#">POOJA SAMAAGRI</a>
+										<ul class="submenu">
+											<li><a href="{% url 'category_product_description' 'pooja-samaagri' 'pooja-oil' %}">Pooja Oil</a></li>
+										</ul>
+									</li>
+									<li class="has-submenu">
+										<a href="#">OTHERS</a>
+										<ul class="submenu">
+											<li><a href="{% url 'category_product_description' 'others' 'shikhahai' %}">Shikhahai </a></li>
+										</ul>
+									</li>
 
 
-						<li class="has-submenu">
-							<a href="#">About <i class="fas fa-chevron-down"></i></a>
-							<ul class="submenu">
-								<li><a href="{% url 'missions' %}">Mission</a></li>
-								<li><a href="{% url 'about' %}">About Ayuhealth</a></li>
-                                <li><a href="https://www.healthline.com/nutrition/what-is-millet" target="_blank">About Millet</a></li>
-                                <li><a href="https://www.downtoearth.org.in/blog/agriculture/how-india-can-be-atmanirbhar-for-edible-oil-production-75517" target="_blank">About edible oil </a></li>
 
+								</ul>
+							</li>
 
-
-							</ul>
-						</li>
-						<li class="has-submenu">
 
 						<li><a href="{% url 'products' %}">Products</a></li>
 

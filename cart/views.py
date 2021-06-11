@@ -31,6 +31,9 @@ def add_cart(request,product_id):
         return redirect('cart')
 
 def cart(request,total=0,quantity=0,cart_items=None):
+    tax = 0
+    shipping_cost = 0
+    grand_total = 0
     try:
         cart = Cart.objects.get(cartId=_cart_id(request))
         cart_items = CartItem.objects.filter(cart=cart,is_active=True)
@@ -77,6 +80,7 @@ def remove_from_cart(request,product_id):
 
 def checkout(request):
     total = 0
+    tax = 0
     quantity = 0
     try:
         cart = Cart.objects.get(cartId=_cart_id(request))

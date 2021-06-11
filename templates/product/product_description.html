@@ -12,8 +12,7 @@
 						<div class="doctor-widget">
 							<div class="doc-info-left">
 								<div class="doctor-img1">
-									<img src="{{single_product.image.url}}" class="img-fluid" alt="User Image"
-										style="width: 80px; height:30px;">
+									<img src="{{single_product.image.url}}" class="img-fluid" alt="User Image">
 								</div>
 								<div class="doc-info-cont">
 									<h4 class="doc-name mb-2">{{ single_product.product_name }}</h4>
@@ -41,9 +40,11 @@
 						<!-- /Tab Menu -->
 
 						<!-- Tab Content -->
+						{%if single_product.facts_img%}
 						<div class="container">
 							<img src="{{ single_product.facts_img.url }}" alt="Product Details">
 						</div>
+						{%endif%}
 					</div>
 				</div>
 				<!-- /Doctor Details Tab -->
