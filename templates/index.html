@@ -1,82 +1,169 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    	<!-- Home Banner -->
-		<div class="pharmacy-home-slider">
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<img src="{% static 'assets/img/slider/slider-1.jpg' %}" alt="">
-					</div>
-					<div class="swiper-slide">
-						<img src="{% static 'assets/img/slider/slider-2.jpg' %}" alt="">
-					</div>
-                    <div class="swiper-slide">
-						<img src="{% static 'assets/img/slider/slider-3.jpg' %}" alt="">
-					</div>
-				</div>
-				<!-- Add Arrows -->
-				<div class="swiper-button-next"></div>
-				<div class="swiper-button-prev"></div>
-				<div class="banner-wrapper">
-					<div class="banner-header text-center">
-						<h1>WELCOME TO AYURHEALTH</h1>
+<!-- Home Banner -->
+<style>
+	.cat-box-top {
+		position: relative;
+		background-color: #cbcbcb;
+		background-image: url(../static/assets/img/product-bg.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+		border: solid 1px #ccc;
+		height: 366px;
+		text-align: center;
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+	}
 
-					</div>
-					<!-- Search -->
-					<div class="search-box">
-						<form action="https://doccure-html.dreamguystech.com/template/search.html">
-							<div class="form-group search-location">
-								<input type="text" class="form-control" placeholder="Search Location">
-								<span class="form-text">Based on your Location</span>
-							</div>
-							<div class="form-group search-info">
-								<input type="text" class="form-control"
-									placeholder="Search Products">
-								<span class="form-text">Ex : Honey or Coconut Oil etc</span>
-							</div>
-							<button type="submit" class="btn btn-primary search-btn mt-0"><i class="fas fa-search"></i>
-								<span>Search</span></button>
-						</form>
-					</div>
-					<!-- /Search -->
-				</div>
+	.cat-box-top:hover {
+		background-image: linear-gradient(rgba(255, 255, 255, 0.5),
+				rgba(255, 255, 255, 0.5)),
+			url("/assets/img/product-bg.png");
+	}
+
+	.cat-details {
+		height: 226px;
+		padding-top: 100px;
+		padding-bottom: 25px;
+		text-align: center;
+	}
+
+	.shopnow-border {
+		border: 1px solid #000;
+	}
+
+	.cat-shop-now {
+		background: url(../static/assets/img/button-bg-orange.png) no-repeat;
+		// display: inline-block;
+		margin: auto;
+		width: 137px;
+		height: 34px;
+		line-height: 34px;
+		text-align: center;
+		font-size: 16px;
+		color: #fff;
+		font-weight: 500;
+		text-transform: uppercase;
+		box-shadow: 1px 1px 1px #fff;
+		// opacity: 0;
+		// visibility: hidden;
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+		display: none;
+	}
+
+	.cat-image {
+		height: 136px;
+		padding-bottom: 20px;
+		text-align: center;
+	}
+
+	.cat-box-top:hover .cat-shop-now {
+		display: block;
+		// padding-bottom: 20px;
+		// height: 34px;
+		padding-bottom: 5%;
+	}
+
+	.cat-box-top:hover .cat-details {
+		// height: 180px;
+		padding-top: 60px;
+		padding-bottom: 0;
+		text-align: center;
+		animation-fill-mode: both;
+		-webkit-animation: moving 5s infinite;
+		animation: moving 5s infinite;
+	}
+
+	@-webkit-keyframes moving {
+		from {
+			-webkit-transform: translateY(0px);
+		}
+
+		to {
+			-webkit-transform: translateY(200px);
+		}
+	}
+</style>
+
+<div class="pharmacy-home-slider">
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="{% static 'assets/img/slider/1.jpg' %}" alt="">
 			</div>
-			<!-- Add Pagination -->
-			<div class="swiper-pagination"></div>
+			<div class="swiper-slide">
+				<img src="{% static 'assets/img/slider/2.jpg' %}" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="{% static 'assets/img/slider/3.jpg' %}" alt="">
+			</div>
 		</div>
-		<!-- /Home Banner -->
+		<!-- Add Arrows -->
+		<div class="swiper-button-next"></div>
+		<div class="swiper-button-prev"></div>
+		<div class="banner-wrapper">
+			<div class="banner-header text-center">
+				<h1>WELCOME TO AYURHEALTH</h1>
 
-		<section class="section home-tile-section">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-9 m-auto">
-						<div class="section-header text-center">
-							<h2>What are you looking for?</h2>
-						</div>
-						<div class="row">
-							{% for c in links %}
-							<div class="col-lg-4 mb-3">
-								<div class="card text-center doctor-book-card">
-									<img src="{% static 'assets/img/find-products.jpg'%}" alt="" class="img-fluid">
-									<div class="doctor-book-card-content tile-card-content-1">
-										<div>
-											<h3 class="card-title mb-0">{{c.category_name}}</h3>
-											<a href="{% url 'products_category' c.slug %}" class="btn book-btn1 px-3 py-2 mt-3" tabindex="0">Find Now</a>
-										</div>
-									</div>
-								</div>
+			</div>
+			<!-- Search -->
+			<div class="search-box">
+				<form action="https://doccure-html.dreamguystech.com/template/search.html">
+					<div class="form-group search-location">
+						<input type="text" class="form-control" placeholder="Search Location">
+						<span class="form-text">Based on your Location</span>
+					</div>
+					<div class="form-group search-info">
+						<input type="text" class="form-control" placeholder="Search Products">
+						<span class="form-text">Ex : Honey or Coconut Oil etc</span>
+					</div>
+					<button type="submit" class="btn btn-primary search-btn mt-0"><i class="fas fa-search"></i>
+						<span>Search</span></button>
+				</form>
+			</div>
+			<!-- /Search -->
+		</div>
+	</div>
+	<!-- Add Pagination -->
+	<div class="swiper-pagination"></div>
+</div>
+<!-- /Home Banner -->
+
+<section class="section home-tile-section">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 m-auto">
+				<div class="section-header text-center">
+					<h2>What are you looking for?</h2>
+				</div>
+				<div class="row row-cols-1 row-cols-md-4 g-4">
+					{% for c in links %}
+					<div class="col-md-4 text-center" style="margin-bottom: 28px;">
+						<div class="cat-box-top">
+							<div class="cat-details">
+								<h1>{{c.category_name}}</h1>
+
+								<a href="{% url 'products_category' c.slug %}">
+									<div class="cat-shop-now">SHOP NOW</div>
+								</a>
 							</div>
-							{%endfor%}
 
+							<div class="cat-image">
+								<img src="https://img.rcmbusiness.com/rcmshopping/type_banner/Shop%20Now%20(2).png">
+							</div>
 						</div>
 					</div>
+					{%endfor%}
+
 				</div>
 			</div>
-		</section>
-
-
-
-
-
+		</div>
+	</div>
+</section>
 {% endblock %}

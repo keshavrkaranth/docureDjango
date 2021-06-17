@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts.apps.AccountsConfig',
     'cart.apps.CartConfig',
     'store.apps.StoreConfig',
     'category.apps.CategoryConfig',
@@ -78,6 +79,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Docure.wsgi.application'
+AUTH_USER_MODEL = 'accounts.Account'
 
 
 # Database
@@ -132,7 +134,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 
 ]
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

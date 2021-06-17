@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b55fc5c3-f0e5-4ff5-8e1a-c1932528cff4" name="Default Changelist" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/templates/category_product_description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Docure/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Docure/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docure/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Docure/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docureapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/docureapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docureapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/docureapp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/slider/slider-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/slider/slider-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/slider/slider-3.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/staticfiles/admin/css/autocomplete.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/staticfiles/admin/css/base.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/staticfiles/admin/css/changelists.css" beforeDir="false" />
@@ -1461,16 +1465,14 @@
       <change beforePath="$PROJECT_DIR$/staticfiles/ckeditor/galleriffic/js/jquery.history.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/staticfiles/ckeditor/galleriffic/js/jquery.opacityrollover.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/staticfiles/ckeditor/galleriffic/js/jush.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0002_alter_products_options.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0003_alter_products_category.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0004_auto_20210611_1639.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0005_auto_20210611_1639.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/css.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/css.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/js.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/product_description.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/product_description.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/products.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1521,10 +1523,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1594,7 +1596,18 @@
       <workItem from="1623328535220" duration="13033000" />
       <workItem from="1623386159180" duration="7000" />
       <workItem from="1623386535233" duration="560000" />
-      <workItem from="1623408744567" duration="4519000" />
+      <workItem from="1623408744567" duration="5273000" />
+      <workItem from="1623432229911" duration="15000" />
+      <workItem from="1623560773704" duration="3125000" />
+      <workItem from="1623578240077" duration="2110000" />
+      <workItem from="1623650446034" duration="33000" />
+      <workItem from="1623919913621" duration="1695000" />
+      <workItem from="1623928630898" duration="181000" />
+      <workItem from="1623930506914" duration="1336000" />
+      <workItem from="1623932272962" duration="111000" />
+      <workItem from="1623935239992" duration="2609000" />
+      <workItem from="1623943859361" duration="9000" />
+      <workItem from="1623945802185" duration="2743000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1622737281945</created>
@@ -1622,6 +1635,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
     <MESSAGE value="first commit" />
     <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
