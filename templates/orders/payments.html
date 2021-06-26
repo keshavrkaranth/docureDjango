@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-header text-center">
+                        Billing Address
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title ">{{order.full_name}}</h5>
+                        <p class="card-text">
+                            {{order.address}}<br>
+                            {{order.place}}<br>
+                            <span><strong>Pincode:</strong></span> {{order.pin}}<br>
+                            {% if order.order_note%}
+                            <span><strong>Order note:</strong></span> {{order.order_note}}
+                            {%endif%}
+                        </p>
+                        <a href="#" class="btn btn-sm" style="background: #957050;color:white">Edit Address</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Review Products
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+
+                            <table class="table table-center mb-0">
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th class="text-right">Total</th>
+                                </tr>
+                                <tbody>
+                                    {% for cart_item in cart_items %}
+                                    <tr>
+                                        <td>{{ cart_item.product.product_name }}</td>
+                                        <td>{{ cart_item.quantity}}x{{cart_item.product.price}}₹</td>
+                                        <td class="text-right">{{ cart_item.sub_totel }}₹</td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-4">
+                <div class="booking-summary pt-5">
+                    <div class="booking-item-wrap">
+                        <ul class="booking-date">
+                            <li>Subtotal <span>{{ total }}₹</span></li>
+                            <li>Shipping <span>{{ shipping_cost }}₹</span></li>
+                        </ul>
+                        <ul class="booking-fee">
+                            <li>Tax <span>{{ tax }}₹</span></li>
+                        </ul>
+                        <div class="booking-total">
+                            <ul class="booking-total-list">
+                                <li>
+                                    <span>Total</span>
+                                    <span class="total-cost">{{ grand_total }}₹</span>
+                                </li>
+                                {% if response %}
+                                <form action="{% url 'razorpay_payment' %}" method="POST">
+                                    <script src="https://checkout.razorpay.com/v1/checkout.js" data-key={{key}}
+                                        data-amount={{response.amount}} data-currency={{response.currency}}
+                                        data-order_id={{response.id}} data-buttontext="Pay Now" data-name="Ayurhealth"
+                                        data-description="" data-image="{% static 'assets/img/pl.png' %}"
+                                        data-prefill.name={{request.user.username}}
+                                        data-prefill.email={{request.user.email}} data-theme.color="#F37254"></script>
+                                    <input type="hidden" custom="Hidden Element" name="hidden">
+                                </form>
+                                {% endif %}
+                                <li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+{%endblock%}

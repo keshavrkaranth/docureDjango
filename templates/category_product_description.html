@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
 <div class="content">
 	<div class="container-fluid">
 
@@ -20,15 +21,20 @@
 									<p>{{ single_product.description | safe }}</p>
 									<div class="feature-product pt-4">
 
-							<div class="card flex-fill mt-4 mb-0">
-								<ul class="list-group list-group-flush">
-									<li class="list-group-item">SKU <span class="float-right">201902-0057</span></li>
-									<li class="list-group-item">Price <span class="float-right">{{single_product.price}} RS</></span></li>
-									<li class="list-group-item">Pack Size <span class="float-right">100g</span></li>
-									<li class="list-group-item">dimensions <span class="float-right">200x300</span></li>
-									<li class="list-group-item">weight <span class="float-right">300g</span></li>
-								</ul>
-							</div>
+										<div class="card flex-fill mt-4 mb-0">
+											<ul class="list-group list-group-flush">
+												<li class="list-group-item">SKU <span
+														class="float-right">201902-0057</span></li>
+												<li class="list-group-item">Price <span
+														class="float-right">{{single_product.price}} RS</></span></li>
+												<li class="list-group-item">Pack Size <span
+														class="float-right">100g</span></li>
+												<li class="list-group-item">dimensions <span
+														class="float-right">200x300</span></li>
+												<li class="list-group-item">weight <span class="float-right">300g</span>
+												</li>
+											</ul>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -51,7 +57,8 @@
 						<!-- Tab Content -->
 						{% if single_product.facts_img%}
 						<div class="container">
-							<img src="{{ single_product.facts_img.url }}" alt="Product Details">
+							<img src="{{ single_product.facts_img.url }}" alt="Product Details"
+								style="width:100%;height:auto;">
 						</div>
 						{%endif%}
 					</div>
@@ -63,11 +70,8 @@
 
 		</div>
 
-
-
 	</div>
 </div>
-
 
 
 {% endblock %}

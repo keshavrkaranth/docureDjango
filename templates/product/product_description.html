@@ -42,7 +42,10 @@
 						<!-- Tab Content -->
 						{%if single_product.facts_img%}
 						<div class="container">
-							<img src="{{ single_product.facts_img.url }}" alt="Product Details">
+							<img src="{{ single_product.facts_img.url }}" alt="Product Details" style="
+							width: 100%;
+							height: auto;
+						">
 						</div>
 						{%endif%}
 					</div>
@@ -60,23 +63,7 @@
 							<h2>{{ single_product.price }} <span>&#8377;</h2>
 						</div>
 						<span class="badge badge-primary">In stock</span>
-						<div class="custom-increment pt-4">
-							<div class="input-group1">
-								<span class="input-group-btn float-left">
-									<button type="button" class="quantity-left-minus btn btn-danger btn-number"
-										data-type="minus" data-field="">
-										<span><i class="fas fa-minus"></i></span>
-									</button>
-								</span>
-								<input type="text" id="quantity" name="quantity" class=" input-number" value="10">
-								<span class="input-group-btn float-right">
-									<button type="button" class="quantity-right-plus btn btn-success btn-number"
-										data-type="plus" data-field="">
-										<span><i class="fas fa-plus"></i></span>
-									</button>
-								</span>
-							</div>
-						</div>
+
 						<div class="clinic-details mt-4">
 							{% if single_product.stock <= 0 %} <center>
 								<h3>Out of Stock</h3>
@@ -110,7 +97,7 @@
 							<ul class="list-group list-group-flush benifits-col">
 								<li class="list-group-item d-flex align-items-center">
 									<div>
-										<i class="fas fa-shipping-fast"></i>
+										<i class="fas fa-shipping-fast" style="color:#957050;"></i>
 									</div>
 									<div>
 										Free Shipping<br><span class="text-sm">For orders from $50</span>
@@ -118,7 +105,7 @@
 								</li>
 								<li class="list-group-item d-flex align-items-center">
 									<div>
-										<i class="far fa-question-circle"></i>
+										<i class="far fa-question-circle" style="color: #957050;"></i>
 									</div>
 									<div>
 										Support 24/7<br><span class="text-sm">Call us anytime</span>
@@ -126,7 +113,7 @@
 								</li>
 								<li class="list-group-item d-flex align-items-center">
 									<div>
-										<i class="fas fa-hands"></i>
+										<i class="fas fa-hands" style="color: #957050;"></i>
 									</div>
 									<div>
 										100% Safety<br><span class="text-sm">Only secure payments</span>
@@ -134,7 +121,7 @@
 								</li>
 								<li class="list-group-item d-flex align-items-center">
 									<div>
-										<i class="fas fa-tag"></i>
+										<i class="fas fa-tag" style="color: #957050;"></i>
 									</div>
 									<div>
 										Hot Offers<br><span class="text-sm">Discounts up to 90%</span>

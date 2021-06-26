@@ -19,13 +19,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('docureapp.urls')),
     path('products/', include('store.urls')),
     path('cart/', include('cart.urls')),
-    path('account/',include('accounts.urls')),
+    path('account/', include('accounts.urls')),
+    path('orders/', include('orders.urls')),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

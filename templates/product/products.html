@@ -51,7 +51,8 @@
 
 								<label class="custom_check">
 
-									<a href="{% url 'products_category' c.slug %}"><span></span> {{ c.category_name | title }}</a>
+									<a href="{% url 'products_category' c.slug %}"><span></span>{{c.category_name | title}}</a>
+
 								</label>
 							</div>
 							{% endfor %}
@@ -77,14 +78,13 @@
 								<a href="{% url 'product-description' pr.category.slug pr.slug %}" tabindex="-1">
 									<img class="img-fluid" alt="Product image" src="{{ pr.image.url }}">
 								</a>
-								<a href="javascript:void(0)" class="fav-btn" tabindex="-1">
-									<i class="far fa-bookmark"></i>
-								</a>
+
 							</div>
 							{%endif%}
 							<div class="pro-content">
 								<h3 class="title pb-4">
-									<a href="{% url 'product-description' pr.category.slug pr.slug %}" tabindex="-1">{{pr.product_name}}</a>
+									<a href="{% url 'product-description' pr.category.slug pr.slug %}"
+										tabindex="-1">{{pr.product_name}}</a>
 								</h3>
 								<div class="row align-items-center">
 									<div class="col-lg-6">

@@ -404,3 +404,8 @@ Version      : 1.3
 	})
 	
 })(jQuery);
+
+setTimeout(function () {
+	$('#message').fadeOut('slow')
+	
+},4000)

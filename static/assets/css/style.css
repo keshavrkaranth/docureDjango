@@ -2240,7 +2240,7 @@ html.menu-opened body {
 -----------------------*/
 
 .footer {
-  background-color: #15558d;
+  background-color: #957050;
 }
 .footer .footer-top {
   padding: 40px 0;
@@ -2314,7 +2314,7 @@ html.menu-opened body {
   margin-right: 15px;
 }
 .footer .footer-bottom .copyright {
-  border-top: 1px solid #1663a6;
+  /* border-top: 1px solid #1663a6; */
   padding: 30px 0;
 }
 .footer .footer-bottom .copyright-text p {
@@ -3348,7 +3348,7 @@ html.menu-opened body {
 -----------------------*/
 
 .breadcrumb-bar {
-  background-color: #15558d;
+  background-color: #957050;
   padding: 15px 0;
 }
 .breadcrumb-bar .breadcrumb-title {
@@ -3669,9 +3669,9 @@ html.menu-opened body {
 }
 .clinic-booking a {
   background-color: #fff;
-  border: 2px solid #20c0f3;
+  border: 2px solid #957050;
   border-radius: 4px;
-  color: #20c0f3;
+  color: #957050;
   display: block;
   font-size: 14px;
   font-weight: 500;
@@ -3683,17 +3683,17 @@ html.menu-opened body {
 }
 .clinic-booking a.view-pro-btn:hover,
 .clinic-booking a.view-pro-btn:focus {
-  background: #20c0f3;
+  background: #957050;
   color: #fff;
 }
 .clinic-booking a.apt-btn {
-  background-color: #20c0f3;
+  background-color: #957050;
   color: #fff;
 }
 .clinic-booking a.apt-btn:hover,
 .clinic-booking a.apt-btn:focus {
-  background-color: #0db9f2;
-  border-color: #0db9f2;
+  background-color: #957050;
+  border-color: #957050;
   color: #fff;
 }
 .load-more {
@@ -7144,7 +7144,7 @@ html.menu-opened body {
 }
 .product-custom .profile-widget:hover .cart-icon {
   color: #fff;
-  background-color: #0de0fe;
+  background-color: #957050;
 }
 .product-description .doctor-img1 {
   width: 40%;
@@ -8664,4 +8664,18 @@ ul.benifits-col li i {
   to {
     -webkit-transform: translateY(200px);
   }
+}
+
+.razorpay-payment-button {
+  background-color: #4caf50;
+  margin-left: 35%;
+  margin-top: 10%;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 6px;
 }
