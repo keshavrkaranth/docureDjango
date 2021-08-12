@@ -1,183 +1,296 @@
 {% load static %}
-<header class="header">
-	<nav class="navbar navbar-expand-lg header-nav">
-		<div class="navbar-header">
-			<a id="mobile_btn" href="javascript:void(0);">
-				<span class="bar-icon">
-					<span></span>
-					<span></span>
-					<span></span>
-				</span>
-			</a>
-			<a href="/" class="navbar-brand logo">
-				<img src="{% static 'assets/img/logo.png' %}" class="img-fluid" alt="Logo">
-			</a>
-		</div>
-		<div class="main-menu-wrapper">
-			<div class="menu-header">
-				<a href="/" class="menu-logo">
-					<img src="{% static 'assets/img/logo.jpg' %}" class="img-fluid" alt="Logo">
-				</a>
-				<a id="menu_close" class="menu-close" href="javascript:void(0);">
-					<i class="fas fa-times"></i>
-				</a>
-			</div>
-			<ul class="main-nav dashboard">
+<link href="{% static 'assets/rcm/css/nav.css' %}" rel=stylesheet>
 
-				<li><a href="{% url 'about' %}">About Us</a></li>
-				<li class="has-submenu ">
-					<a href="#">Categories <i class="fas fa-chevron-down"></i></a>
-					<ul class="submenu ">
-						<li class="has-submenu">
-							<a href="#">EDIBLE OILS & GHEE</a>
-							<ul class="submenu">
-								<li><a href="{% url 'category_product_description' 'edible-oils-ghee' 'coconut-oil' %}">Coconut
-										Oil</a></li>
-								<li><a
-										href="{% url 'category_product_description' 'edible-oils-ghee' 'ground-nut-oil' %}">Groundnut
-										Oil</a></li>
-								<li><a href="{% url 'category_product_description' 'edible-oils-ghee' 'sesame-oil' %}">Sesame
-										Oil</a></li>
-								<li><a
-										href="{% url 'category_product_description' 'edible-oils-ghee' 'pure-desi-ghee' %}">Pure
-										Desi Ghee</a></li>
+<div class=wrapper>
+	<div class=loader style=display:none></div>
+	<header>
+		<div class="container header-container" style="color: #CB2128;">
+			<section class=header-right>
+
+				{% if user.is_authenticated %}
+				<div class="login-sec wow slideInRight" data-wow-duration=2s data-wow-delay=0.3s><a href="#">Welcome
+						back {{user.name}}</a>
+				</div>
+				<div class="cart-sec wow slideInRight" data-wow-duration=2s data-wow-delay=0.5s>
+					<a href="{%url 'cart'%}">
+						Cart <span> <span id=totalCartItems class="badge badge-primary"></span> </span> </a>
+				</div>
+				<div class="login-sec wow slideInRight" data-wow-duration=2s data-wow-delay=0.3s><a
+						href="{% url 'logout' %}">Logout</a>
+				</div>
+				{% else %}
+				<div class="login-sec wow slideInRight" data-wow-duration=2s data-wow-delay=0.3s><a
+						href="{% url 'login' %}">Login</a>
+				</div>
+				<div class="login-sec wow slideInRight" data-wow-duration=2s data-wow-delay=0.4s><a class=signup-now
+						href="{% url 'signup'%}">Register</a></div>
+				<div class="cart-sec wow slideInRight" data-wow-duration=2s data-wow-delay=0.5s>
+					<a href="{%url 'cart'%}">
+						Cart <span> <span id=totalCartItems class="badge badge-primary"></span> </span> </a>
+				</div>
+				{% endif %}
+
+			</section>
+		</div>
+	</header>
+	<div class=header-inner>
+		<section class=logo-inner>
+			<div class=logo-left><a href="/"><img src="{% static 'assets/rcm/img/logo-new.png'%}" RCM Business"></a>
+			</div>
+			<div class=logo-corner></div>
+		</section>
+		<div class="container hdr-scroll-container">
+			<section class=scroll-nav>
+				<div class=menu>
+					<ul>
+						<li class=nav-item><a href="{% url 'about' %}"><i class=media-icon></i>ABOUT US</a>
+						<li class=nav-item><a href=#!><i class=shop-icon></i>Product range</a>
+							<ul class=menu-shop style=margin-left:-25%>
+								<div class=nav-in-col>
+									<li>
+										<h4>EDIBLE OILS & GHEE</h4>
+										<ul>
+											<li><a href=Shop/1/PERSONAL-CARE/101/Body-Care.html>
+													<h5 style=text-decoration:underline;color:#ffa037>
+
+													</h5>
+												</a>
+												<ul>
+													<li><a
+															href="{% url 'category_product_description' 'edible-oils-ghee' 'coconut-oil' %}">Coconut
+															Oil</a>
+													<li><a
+															href="{% url 'category_product_description' 'edible-oils-ghee' 'ground-nut-oil' %}">Groundnut
+															Oil</a>
+													<li><a
+															href="{% url 'category_product_description' 'edible-oils-ghee' 'sesame-oil' %}">Sesame
+															Oil</a>
+													<li><a
+															href="{% url 'category_product_description' 'edible-oils-ghee' 'pure-desi-ghee' %}">Pure
+															Desi
+															Ghee</a>
+
+												</ul>
+
+										</ul><span><br></span>
+									</li>
+								</div>
+								<div class=nav-in-col>
+									<li>
+										<h4>CEREALS & MILLETS</h4>
+										<ul>
+											<li><a href=Shop/2/HEALTH-CARE/112/Supplements.html>
+													<h5 style=text-decoration:underline;color:#ffa037>
+
+													</h5>
+												</a>
+												<ul>
+													<li><a
+															href="{% url 'category_product_description' 'cereals-and-millets' 'little-millet-same' %}">Little
+															Millet
+														</a>
+													<li><a
+															href="{% url 'category_product_description' 'cereals-and-millets' 'kodo-millet-harka' %}">Kodo
+															Millet</a>
+													<li><a
+															href="{% url 'category_product_description' 'cereals-and-millets' 'proso-millet-baragu' %}">Proso
+															Millet</a>
+													<li><a
+															href="{% url 'category_product_description' 'cereals-and-millets' 'finger-millet-ragi' %}">Finger
+															Millet</a>
+													<li><a
+															href="{% url 'category_product_description' 'cereals-and-millets' 'jowar-jola' %}">Jowar</a>
+												</ul>
+
+
+
+
+										</ul><span><br></span>
+									<li>
+
+										<ul>
+											<li><a href=Shop/10/AGRICULTURE/127/Fertilizers.html>
+													<h5>
+
+													</h5>
+												</a>
+
+										</ul><span><br></span>
+
+								</div>
+								<div class=nav-in-col>
+									<li>
+										<h4>SPICES</h4>
+										<ul>
+											<li><a href=Shop/4/FOODS-GROCERY/113/Grocery.html>
+													<h5 style=text-decoration:underline;color:#ffa037>
+
+													</h5>
+												</a>
+												<ul>
+													<li><a
+															href="{% url 'category_product_description' 'spices' 'cardamom' %}">Cardamom
+														</a>
+													<li><a
+															href="{% url 'category_product_description' 'spices' 'cinamon' %}">Cinamon</a>
+													<li><a
+															href="{% url 'category_product_description' 'spices' 'black-pepper' %}">Black
+															Pepper</a>
+													<li><a
+															href="{% url 'category_product_description' 'spices' 'cumin' %}">Cumin
+														</a>
+													<li><a
+															href="{% url 'category_product_description' 'spices' 'cloves' %}">Cloves
+														</a>
+													<li><a
+															href="{% url 'category_product_description' 'spices' 'coriander-powder' %}">Coriander
+															Powder
+														</a>
+													<li><a
+															href="{% url 'category_product_description' 'spices' 'mustard-seed' %}">Mustard
+															Seed</a>
+
+												</ul>
+
+
+										</ul><span><br></span>
+									</li>
+								</div>
+								<div class=nav-in-col>
+									<li>
+										<h4>DRY FRUITS & HONEY</h4>
+										<ul>
+											<li><a href=Shop/3/HOUSEHOLD/111/Cleaning-Accessories.html>
+													<h5 style=text-decoration:underline;color:#ffa037>
+
+													</h5>
+												</a>
+												<ul>
+													<li><a
+															href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'cashew-nut' %}">Cashew
+															Nuts</a>
+													<li><a
+															href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'raisins-kishmish' %}">Raisins
+															(Kishmish)</a>
+													<li><a
+															href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'pistachio-nuts' %}">Pistachio
+															Nuts</a>
+													<li><a
+															href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'dates' %}">Datesr</a>
+													<li><a
+															href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'walnuts' %}">Walnuts</a>
+													<li><a
+															href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'almonds-badam' %}">Almonds
+															(Badam)</a>
+													<li><a
+															href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'honey' %}">Honey</a>
+												</ul>
+
+										</ul><span><br></span>
+
+								</div>
+								<div class=nav-in-col>
+									<li>
+										<h4>HEALTH MIX & SNACKS</h4>
+										<ul>
+											<li><a href=Shop/18/STATIONERY/141/Notebook.html>
+													<h5 style=text-decoration:underline;color:#ffa037>
+
+													</h5>
+												</a>
+												<ul>
+													<li><a
+															href="{% url 'category_product_description' 'health-mix-and-healthy-snacks' 'mixed-millets-powder' %}">Mixed
+															Millets
+															Powder</a>
+												</ul>
+
+										</ul><span><br></span>
+									<li>
+										<h4>OTHERS</h4>
+										<ul>
+											<li><a href=Shop/22/TOOLS/150/Flange.html>
+													<h5 style=text-decoration:underline;color:#ffa037>
+
+													</h5>
+												</a>
+												<ul>
+													<li><a
+															href="{% url 'category_product_description' 'others' 'shikhahai' %}">Shikhahai</a>
+												</ul>
+
+										</ul><span><br></span>
+									</li>
+
+								</div>
+								<div class=nav-in-col>
+									<li>
+										<h4> POOJA SAMAGRI</h4>
+										<ul>
+											<li><a href=Shop/3/HOUSEHOLD/111/Cleaning-Accessories.html>
+													<h5 style=text-decoration:underline;color:#ffa037>
+
+													</h5>
+												</a>
+												<ul>
+													<li><a
+															href="{% url 'category_product_description' 'pooja-samaagri' 'pooja-oil' %}">Pooja
+															Oil</a>
+
+												</ul>
+
+										</ul><span><br></span>
+
+								</div>
+
 							</ul>
-						</li>
-						<li class="has-submenu">
-							<a href="#">CEREALS AND MILLETS</a>
-							<ul class="submenu">
-								<li><a
-										href="{% url 'category_product_description' 'cereals-and-millets' 'little-millet-same' %}">Little
-										Millet</a></li>
-								<li><a
-										href="{% url 'category_product_description' 'cereals-and-millets' 'kodo-millet-harka' %}">Kodo
-										Millet</a> </li>
-								<li><a
-										href="{% url 'category_product_description' 'cereals-and-millets' 'proso-millet-baragu' %}">Proso
-										Millet</a></li>
-								<li><a
-										href="{% url 'category_product_description' 'cereals-and-millets' 'finger-millet-ragi' %}">Finger
-										Millet</a></li>
-								<li><a
-										href="{% url 'category_product_description' 'cereals-and-millets' 'jowar-jola' %}">Jowar</a>
-								</li>
-							</ul>
-						</li>
-						<li class="has-submenu">
-							<a href="#">SPICES</a>
-							<ul class="submenu">
-								<li><a href="{% url 'category_product_description' 'spices' 'cardamom' %}">Cardamom </a>
-								</li>
-								<li><a href="{% url 'category_product_description' 'spices' 'cinamon' %}">Cinamon </a>
-								</li>
-								<li><a href="{% url 'category_product_description' 'spices' 'black-pepper' %}">Black
-										Pepper </a></li>
-								<li><a href="{% url 'category_product_description' 'spices' 'cumin' %}">Cumin </a></li>
-								<li><a href="{% url 'category_product_description' 'spices' 'cloves' %}">Cloves </a>
-								</li>
-								<li><a href="{% url 'category_product_description' 'spices' 'coriander-powder' %}">Coriander
-										Powder </a></li>
-								<li><a href="{% url 'category_product_description' 'spices' 'mustard-seed' %}">Mustard
-										Seed </a></li>
-							</ul>
-						</li>
-						<li class="has-submenu">
-							<a href="#">DRY FRUITS & HONEY</a>
-							<ul class="submenu">
-								<li><a
-										href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'cashew-nut' %}">Cashew
-										Nuts</a></li>
-								<li><a
-										href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'raisins-kishmish' %}">Raisins
-										(Kishmish)</a></li>
-								<li><a
-										href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'pistachio-nuts' %}">Pistachio
-										Nuts</a></li>
-								<li><a
-										href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'dates' %}">Dates</a>
-								</li>
-								<li><a
-										href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'walnuts' %}">Walnuts</a>
-								</li>
-								<li><a
-										href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'almonds-badam' %}">Almonds
-										(Badam)</a></li>
-								<li><a
-										href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'honey' %}">Honey</a>
-								</li>
-							</ul>
-						</li>
-						<li class="has-submenu">
-							<a href="#">HEALTH MIX AND SNACKS </a>
-							<ul class="submenu">
-								<li><a
-										href="{% url 'category_product_description' 'health-mix-and-healthy-snacks' 'mixed-millets-powder' %}">Mixed
-										Millets Powder</a></li>
-							</ul>
-						</li>
-						<li class="has-submenu">
-							<a href="#">POOJA SAMAAGRI</a>
-							<ul class="submenu">
-								<li><a href="{% url 'category_product_description' 'pooja-samaagri' 'pooja-oil' %}">Pooja
-										Oil</a></li>
-							</ul>
-						</li>
-						<li class="has-submenu">
-							<a href="#">OTHERS</a>
-							<ul class="submenu">
-								<li><a href="{% url 'category_product_description' 'others' 'shikhahai' %}">Shikhahai
-									</a></li>
-							</ul>
-						</li>
+						<li class=nav-item><a href="{% url 'products' %}"><i class=shop-icon></i>Products</a>
 
 
 
 					</ul>
-				</li>
-
-
-				<li><a href="{% url 'products' %}">Products</a></li>
-
-
-				{% if user.id is None%}
-				<li class="login-link">
-					<a href="{% url 'login' %}">Login / Signup</a>
-				</li>
-				{% else %}
-
-				<li class="login-link">
-					<a href="{% url 'logout' %}">Logout</a>
-				</li>
-				{% endif %}
-
-
-			</ul>
+				</div>
+			</section>
 		</div>
-		<ul class="nav header-navbar-rht">
+	</div>
 
-
-
-
-			{% if user.id is None%}
-
-			<li class="nav-item">
-				<a href="{% url 'cart' %}"><i class="fas fa-shopping-cart"></i><small
-						class="unread-msg1-new">{{cart_count }}</small></a>
-
-			</li>
-			<li class="nav-item">
-				<a class="nav-link header-login" href="{% url 'login' %}">Login / Signup </a>
-			</li>
-			{% else %}
-			<li class="nav-item">
-				<a href="{% url 'cart' %}"><i class="fas fa-shopping-cart"></i><small class="unread-msg1-new"
-						style="right: 125px;">{{cart_count }}</small></a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link header-login" href="{% url 'logout' %}">Logout </a>
-			</li>
-			{% endif %}
-
-		</ul>
-	</nav>
-</header>
+</div>
+<script src="{% static 'assets/rcm/js/jquery-1.11.3.min.js' %}"></script>
+<script src="{% static 'assets/rcm/js/mainJs4010' %}"></script>
+<script>$(".category-top h2").click(function () { $(this).next(".category-top ul").slideToggle(300); $(this).toggleClass('minusIcon'); }); $(".category-bottom h2").click(function () { $(this).next(".category-block").slideToggle(300); $(this).toggleClass('minusIcon'); }); $(".category-bottom h2").click(function () { $(this).next(".price-filter").slideToggle(300); }); $(".whislist-icon button").click(function () { $(this).find(".fa").toggleClass('whislist-active'); }); $(document).ready(function () { $('.toggle-nav').click(function (e) { $(this).toggleClass('active-category'); $('.category-menu > .category-top').toggleClass('active-category'); e.stopImmediatePropagation(); e.preventDefault(); }); }); $("#btn-apply-filter").click(function () {
+		var checked_values = $('.cb_filter:checked').map(function () { return this.value; }).get().join(',')
+		console.log(checked_values); var url = window.location.href; if (url.indexOf("variants=") > 0) { url = removeURLParameter(url, "oldvariants"); url = url.replace("variants=", "oldvariants="); }
+		if (checked_values !== 'undefined' && checked_values != '') { var newUrl = updateQueryStringParameter(url, "variants", checked_values); }
+		else { var newUrl = removeURLParameter(url, "variants"); }
+		window.location.replace(newUrl);
+	}); $('.cb_filter').change(function () {
+		if ($(this).is(":checked")) {
+			var checked_values = $('.cb_filter:checked').map(function () { return this.value; }).get().join(',')
+			console.log(checked_values); var url = window.location.href; if (url.indexOf("variants=") > 0) { url = removeURLParameter(url, "oldvariants"); url = url.replace("variants=", "oldvariants="); }
+			if (checked_values !== 'undefined' && checked_values != '') { var newUrl = updateQueryStringParameter(url, "variants", checked_values); }
+			else { var newUrl = removeURLParameter(url, "variants"); }
+			window.location.replace(newUrl);
+		}
+		else {
+			var checked_values = $('.cb_filter:checked').map(function () { return this.value; }).get().join(',')
+			console.log(checked_values); var url = window.location.href; if (checked_values !== 'undefined' && checked_values != '') { var newUrl = removeURLParameter(url, "variants"); newUrl = updateQueryStringParameter(newUrl, "variants", checked_values); }
+			else { var newUrl = removeURLParameter(url, "variants"); newUrl = removeURLParameter(newUrl, "oldvariants"); }
+			window.location.replace(newUrl);
+		}
+	}); $('#SortSelector').on('change', function () { var url = window.location.href; var newUrl = updateQueryStringParameter(url, "sort", this.value); window.location.replace(newUrl); }); function updateQueryStringParameter(uri, key, value) {
+		var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i"); var separator = uri.indexOf('?') !== -1 ? "&" : "?"; if (uri.match(re)) { return uri.replace(re, '$1' + key + "=" + value + '$2'); }
+		else { return uri + separator + key + "=" + value; }
+	}
+	function removeURLParameter(url, parameter) {
+		var urlparts = url.split('?'); if (urlparts.length >= 2) {
+			var prefix = encodeURIComponent(parameter) + '='; var pars = urlparts[1].split(/[&;]/g); for (var i = pars.length; i-- > 0;) { if (pars[i].lastIndexOf(prefix, 0) !== -1) { pars.splice(i, 1); } }
+			url = urlparts[0] + '?' + pars.join('&'); return url;
+		} else { url = urlparts[0]; return url; }
+	}</script>
+<script>$(function () {
+		var current = location.pathname; $('#main-menu li a').each(function () { var $this = $(this); if ($this.attr('href').indexOf(current) !== -1) { $this.closest('li').addClass('active'); } }); $('.toggle-nav').click(function (e) { $(this).toggleClass('active-main-menu'); $('.main-menu > .main-menu-top').toggleClass('active-main-menu'); e.stopImmediatePropagation(); e.preventDefault(); }); $(document).ajaxError(function (event, jqxhr, settings, exception) {
+			if (jqxhr.status == 401) { swal("Session Expired", "Sorry, your session has expired. Please login again to continue", "error").then(function () { window.location.reload(); }); return; }
+			else { showToastNotification("Error", "An error occurred: " + jqxhr.status + "\nError: " + exception, "error"); }
+		}); $.ajaxSetup({ cache: false });
+	});</script>
+<script>var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-39120498-1']); _gaq.push(['_trackPageview']); (function () { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>

@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('place_order', views.place_order, name='place_order'),
-    path('razorpay_payment/',
+    path('test', views.test, name='test'),
+    path('razorpay_payment/<str:order_no>',
          views.razorpay_payment, name='razorpay_payment'),
 ]

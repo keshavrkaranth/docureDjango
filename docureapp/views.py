@@ -34,3 +34,7 @@ def category_product_description(request, catogery_slug, product_slug):
         'single_product': single_product,
     }
     return render(request, 'category_product_description.html', data)
+
+
+def gallery_view(request):
+    return render(request,'gallery.html')

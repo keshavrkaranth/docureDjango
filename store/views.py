@@ -56,7 +56,7 @@ def product_description(request, catogery_slug, product_slug):
         'single_product': single_product,
         'in_cart': in_cart
     }
-    return render(request, 'product/product_description.html', data)
+    return render(request, 'product/pd.html', data)
 
 
 def product_list(request):

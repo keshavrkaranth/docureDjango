@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="content">
+<div class="content" style="margin-top: 65px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-8">
                 <div class="card">
-                    <div class="card-header text-center">
+                    <div class="card-header ">
                         Billing Address
                     </div>
                     <div class="card-body">
@@ -68,7 +68,7 @@
                                     <span class="total-cost">{{ grand_total }}₹</span>
                                 </li>
                                 {% if response %}
-                                <form action="{% url 'razorpay_payment' %}" method="POST">
+                                <form action="{% url 'razorpay_payment' order.order_number %}" method="POST">
                                     <script src="https://checkout.razorpay.com/v1/checkout.js" data-key={{key}}
                                         data-amount={{response.amount}} data-currency={{response.currency}}
                                         data-order_id={{response.id}} data-buttontext="Pay Now" data-name="Ayurhealth"

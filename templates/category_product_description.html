@@ -1,19 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<style>
+	<script src="{% static 'assets/elevate/jquery-1.8.3.min.js' %}"></script><script src="{% static 'assets/elevate/jquery.elevatezoom.js' %}"></script><style>p,
+	li {
+		font-family: sans-serif;
+		font-size: 14px;
+	}
 
-<div class="content">
+	.kes {
+		background: #fffee6;
+	}
+</style>
+
+<div class="content" style="margin-top: 65px;font-size: 0.9375rem;">
 	<div class="container-fluid">
 
 		<div class="row">
 
 			<div class="col-md-12 col-lg-12 col-xl-12">
 				<div class="card">
-					<div class="card-body product-description">
+					<div class="card-body product-description kes">
 						<div class="doctor-widget">
 							<div class="doc-info-left">
 								<div class="doctor-img1">
-									<img src="{{single_product.image.url}}" class="img-fluid" alt="User Image">
+									<img id="zoom_01" src="{{single_product.image.url}}" class="img-fluid"
+										data-zoom-image="{{single_product.zoomed_img.url}}" />
 								</div>
 								<div class="doc-info-cont">
 									<h4 class="doc-name mb-2">{{ single_product.product_name }}</h4>
@@ -23,15 +35,16 @@
 
 										<div class="card flex-fill mt-4 mb-0">
 											<ul class="list-group list-group-flush">
-												<li class="list-group-item">SKU <span
+												<li class="list-group-item kes">SKU <span
 														class="float-right">201902-0057</span></li>
-												<li class="list-group-item">Price <span
+												<li class="list-group-item kes">Price <span
 														class="float-right">{{single_product.price}} RS</></span></li>
-												<li class="list-group-item">Pack Size <span
+												<li class="list-group-item kes">Pack Size <span
 														class="float-right">100g</span></li>
-												<li class="list-group-item">dimensions <span
+												<li class="list-group-item kes">dimensions <span
 														class="float-right">200x300</span></li>
-												<li class="list-group-item">weight <span class="float-right">300g</span>
+												<li class="list-group-item kes">weight <span
+														class="float-right">300g</span>
 												</li>
 											</ul>
 										</div>
@@ -47,7 +60,7 @@
 
 				<!-- Doctor Details Tab -->
 				<div class="card">
-					<div class="card-body pt-0">
+					<div class="card-body pt-0 kes">
 
 						<!-- Tab Menu -->
 						<h3 class="pt-4">Product Details</h3>
@@ -56,7 +69,7 @@
 
 						<!-- Tab Content -->
 						{% if single_product.facts_img%}
-						<div class="container">
+						<div class="container ">
 							<img src="{{ single_product.facts_img.url }}" alt="Product Details"
 								style="width:100%;height:auto;">
 						</div>
@@ -72,6 +85,9 @@
 
 	</div>
 </div>
+<script>
+	$('#zoom_01').elevateZoom({ scrollTo: true });
+</script>
 
 
 {% endblock %}

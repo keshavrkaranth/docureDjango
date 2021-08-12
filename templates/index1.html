@@ -23,130 +23,145 @@
     <link href="{% static 'assets/rcm/css/bootstrap.min.css' %}" rel=stylesheet>
     <link href="{% static 'assets/rcm/css/mainCssbdbc.css' %}" rel=stylesheet>
     <link href="{% static 'assets/rcm/css/toastr.css' %}" rel=stylesheet>
-    <style>
-        .offer-news-text-right>article>p {
-            font-size: 2.1vh
-        }
 
-        .ytplayer {
-            pointer-events: none;
-            position: absolute
-        }
-
-        .vertical-alignment-helper {
-            display: table;
-            height: 100%;
-            width: 90%;
-            margin: auto
-        }
-
-        @media (min-width:992px) {
-            .vertical-alignment-helper {
-                display: table;
-                height: 60%;
-                width: 60%;
-                margin: 10% auto
-            }
-        }
-
-        .vertical-align-center {
-            display: table-cell;
-            vertical-align: middle
-        }
-    </style>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,300,500" rel=stylesheet>
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel=stylesheet>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel=stylesheet>
-    <style>
-        #CaptchaInputText0 {
-            text-transform: uppercase
-        }
 
-        #toast-container>div {
-            padding-top: 20px;
-            padding-bottom: 20px;
-            opacity: 1 !important
-        }
-
-        .toast-message {
-            font-size: medium
-        }
-
-        table.grid-table .grid-filter-btn.filtered {
-            background-color: #007bff;
-            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAMCAYAAABbayygAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAARpJREFUKFNjYGj//58o/P//fwdiMIOkpKQ/VhOQMFgNULWIh4fHYWNj4//YMEgOpIYBBI4dO2axOC/396GinP/O+vpwRVbGxl92+vluXm1kuASsEKiD5VB99aG3eTH/HxjL/A/RUPsfrqb6f7e21uutlhbRYEUwAFQskOLmun2+lND/0xxM/7dycXzd6OxoCpVGBduWLjXv4+f/v5WF+f9RbtYvfeysqlApBKhhY2Hcxsy0+xAL038nbe3/m8W4ss/Jcx2GSiPAal6uvGtczP9TFOXBHgGJ7RHlmLGOjy0UrAAGzgT7rn7urP/P3NDgv6+v73aQWAMzM+dqTtbJYAUwsNzeyuhImE8GSBHQYxpQYYYJQCcxMDAwAAB7/bt5uWh9FAAAAABJRU5ErkJggg==);
-            background-repeat: no-repeat;
-            width: 12px;
-            height: 14px
-        }
-
-        .sticky-social {
-            position: fixed;
-            top: 40%;
-            right: -1px;
-            padding: 0;
-            margin: 0;
-            z-index: 10001
-        }
-
-        .social {
-            list-style: none
-        }
-
-        .social li {
-            padding: 10px 10px;
-            margin-bottom: 10px;
-            font-size: 25px;
-            transition: all 0.8s ease-in-out
-        }
-
-        .social li:hover {
-            margin-left: -30px;
-            box-shadow: 2px 5px 10px grey
-        }
-
-        .social li:hover .fa {
-            margin-left: 20px
-        }
-
-        .fa {
-            color: #fff;
-            transition: all 0.8s ease-in-out
-        }
-
-        .fb {
-            background-color: #3C5A98
-        }
-
-        .twitter {
-            background-color: #1EA1F2
-        }
-
-        .insta {
-            background-color: #DC4F42
-        }
-
-        .youtube {
-            background-color: #CB2128
-        }
-    </style>
 
 <body>
     <div class=wrapper>
         <div class=loader style=display:none></div>
         <section class=left-navigation>
             <section class="col-sm-13 logo-sec"><a class="logo wow slideInLeft" data-wow-duration=1s data-wow-delay=0.2s
-                    href="/"> <img class=img-responsive src="{% static 'assets/rcm/img/logo.png'%}" alt="RCM Business">
+                    href="/"> <img class=img-responsive src="{% static 'assets/rcm/img/logo-new.bmp'%}"
+                        alt="RCM Business" style="
+                        width: 200px;
+                        height: 100px;">
                 </a>
             </section>
             <nav>
                 <ul>
                     <li class="first-list wow slideInLeft" data-wow-duration=1s data-wow-delay=0.3s>
                         <a href="{% url 'about' %}">About us</a>
-                    <li class="second-list wow slideInLeft" data-wow-duration=1s data-wow-delay=0.3s><a
-                            href="{% url 'products' %}">Categories</a>
+                    <li class="second-list wow slideInLeft" data-wow-duration=1s data-wow-delay=0.3s><a href="#">Product
+                            range</a>
+                        <ul>
+                            <li class="kes"><a href="#" class="col">EDIBLE OILS &
+                                    GHEE</a>
+                                <ul>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'edible-oils-ghee' 'coconut-oil' %}">Coconut
+                                            Oil</a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'edible-oils-ghee' 'ground-nut-oil' %}">Groundnut
+                                            Oil</a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'edible-oils-ghee' 'sesame-oil' %}">Sesame
+                                            Oil</a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'edible-oils-ghee' 'pure-desi-ghee' %}">Pure
+                                            Desi
+                                            Ghee</a></li>
+                                </ul>
+
+                            </li>
+                            <li class="kes"><a class='col' href="#">CEREALS & MILLETS</a>
+                                <ul>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'cereals-and-millets' 'little-millet-same' %}">Little
+                                            Millet
+                                        </a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'cereals-and-millets' 'kodo-millet-harka' %}">Kodo
+                                            Millet</a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'cereals-and-millets' 'proso-millet-baragu' %}">Proso
+                                            Millet</a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'cereals-and-millets' 'finger-millet-ragi' %}">Finger
+                                            Millet</a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'cereals-and-millets' 'jowar-jola' %}">Jowar</a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li class="kes"><a class='col' href="#">SPICES</a>
+                                <ul>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'spices' 'cardamom' %}">Cardamom
+                                        </a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'spices' 'cinamon' %}">Cinamon</a>
+                                    <li class='kes'><a class="col"
+                                            href="{% url 'category_product_description' 'spices' 'black-pepper' %}">Black
+                                            Pepper</a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'spices' 'cumin' %}">Cumin
+                                        </a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'spices' 'cloves' %}">Cloves
+                                        </a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'spices' 'coriander-powder' %}">Coriander
+                                            Powder
+                                        </a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'spices' 'mustard-seed' %}">Mustard
+                                            Seed</a></li>
+                                </ul>
+
+                            </li>
+                            <li class="kes"><a class='col' href="#">DRY FRUITS & HONEY</a>
+                                <ul>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'cashew-nut' %}">Cashew
+                                            Nuts</a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'raisins-kishmish' %}">Raisins
+                                            (Kishmish)</a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'pistachio-nuts' %}">Pistachio
+                                            Nuts</a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'dates' %}">Datesr</a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'walnuts' %}">Walnuts</a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'almonds-badam' %}">Almonds
+                                            (Badam)</a>
+                                    <li class='kes'><a class='col'
+                                            href="{% url 'category_product_description' 'dry-fruits-and-nuts-honey' 'honey' %}">Honey</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="kes"><a class='col' href="#">HEALTH MIX & SNACKS</a>
+                                <ul>
+                                    <li class=kes><a class=col
+                                            href="{% url 'category_product_description' 'health-mix-and-healthy-snacks' 'mixed-millets-powder' %}">Mixed
+                                            Millets
+                                            Powder</a>
+                                </ul>
+
+                            </li>
+                            <li class="kes"><a class='col' href="#">OTHERS</a>
+                                <ul>
+                                    <li class="kes"><a class="col"
+                                            href="{% url 'category_product_description' 'others' 'shikhahai' %}">Shikhahai</a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </li>
+
                     <li class="third-list wow slideInLeft" data-wow-duration=1s data-wow-delay=0.4s>
-                        <a href="{% url 'products' %}">Products</a>
+                        <a href="#">Business plans</a>
+                    <li class="third-list wow slideInLeft" data-wow-duration=1s data-wow-delay=0.4s>
+                        <a href="{% url 'gallery' %}" style="
+                        padding-right: 12px;
+                    ">Link for gallery</a>
 
                 </ul>
             </nav>
@@ -184,7 +199,8 @@
         </header>
         <div class=header-scroll>
             <section class=logo-scroll>
-                <div class=logo-left><a href="/"><img src="{% static 'assets/img/logo.png' %}" RCM Business"></a></div>
+                <div class=logo-left><a href="/"><img src="{% static 'assets/rcm/img/logo-new.png'%}" RCM Business"></a>
+                </div>
                 <div class=logo-corner></div>
             </section>
             <div class="container hdr-scroll-container">
@@ -192,7 +208,7 @@
                     <div class=menu>
                         <ul>
                             <li class=nav-item><a href="{% url 'about' %}"><i class=media-icon></i>ABOUT US</a>
-                            <li class=nav-item><a href=#!><i class=shop-icon></i>Categories</a>
+                            <li class=nav-item><a href=#!><i class=shop-icon></i>Product range</a>
                                 <ul class=menu-shop style=margin-left:-25%>
                                     <div class=nav-in-col>
                                         <li>
@@ -393,6 +409,9 @@
 
                                 </ul>
                             <li class=nav-item><a href="{% url 'products' %}"><i class=shop-icon></i>Products</a>
+                            <li class=nav-item><a href="#"><i class=media-icon></i>Business plan</a>
+                            <li class=nav-item><a href="{% url 'gallery' %}"><i class=media-icon></i>Link for gallery
+                                </a>
 
 
 
@@ -403,32 +422,21 @@
         </div>
         <section class=main_slider>
             <div id=mainslider>
-                <div class=slide><img src="{% static 'assets/rcm/img/test/1.jpg' %}" title="Swechha Premium"
+                <div class=slide><img src="{% static 'assets/img/slider/n1.jpg' %}" title="Swechha Premium"
                         alt="Swechha Premium"></div>
-                <div class=slide><img src="{% static 'assets/rcm/img/test/2.jpg' %}" title="Display wall"
+                <div class=slide><img src="{% static 'assets/img/slider/n2.jpg' %}" title="Display wall"
                         alt="Display wall">
                 </div>
-                <div class=slide><img src="{% static 'assets/rcm/img/test/3.jpg' %}" title="Multigrain Dalia"
+                <div class=slide><img src="{% static 'assets/img/slider/n3.jpg' %}" title="Multigrain Dalia"
                         alt="Multigrain Dalia">
                 </div>
-                <div class=slide><img src="{% static 'assets/rcm/img/test/4.jpg' %}" title=Rice alt=Rice>
+                <div class=slide><img src="{% static 'assets/img/slider/n4.jpg' %}" title=Rice alt=Rice>
                 </div>
-                <div class=slide><img src="{% static 'assets/rcm/img/test/5.jpg' %}" title="personal care"
+                <div class=slide><img src="{% static 'assets/img/slider/n5.jpg' %}" title="personal care"
                         alt="personal care"></div>
-                <div class=slide><img src="{% static 'assets/rcm/img/test/6.jpg' %}" title=Keysoul alt=Keysoul>
+                <div class=slide><img src="{% static 'assets/img/slider/n6.jpg' %}" title=Keysoul alt=Keysoul>
                 </div>
-                <div class=slide><img src="{% static 'assets/rcm/img/bg/1585233156753_HP_Banner.jpg' %}"
-                        title=Nutricharge alt=Nutricharge>
-                </div>
-                <div class=slide><img src="{% static 'assets/rcm/img/bg/good dot home banner.jpg' %}" title="Good Dot"
-                        alt="Good Dot">
-                </div>
-                <div class=slide><img src="{% static 'assets/rcm/img/bg/RCM spices.jpg' %}" title=Spices alt=Spices>
-                </div>
-                <div class=slide><img src="{% static 'assets/rcm/img/bg/pair it banner.jpg' %}" title="Pair It"
-                        alt="Pair It"></div>
-                <div class=slide><img src="{% static 'assets/rcm/img/bg/Health guard banner-01.jpg' %}"
-                        title="health guard" alt="health guard"></div>
+
             </div>
         </section>
         <section class="about-sec clearfix">
@@ -442,11 +450,11 @@
                     Independent Direct Sellers to earn residual income, which can lead toward
                     financial security.
             </div>
-            <div class=about-right><img src="{% static 'assets/rcm/img/test/btm.jpg' %}" alt="RCM Business"></div>
+            <!-- <div class=about-right><img src="{% static 'assets/rcm/img/test/btm.jpg' %}" alt="RCM Business"></div> -->
         </section>
         <section class=featured-sec>
             <div class="container featured-container">
-                <h1>Featured <span>Category</span></h1>
+                <h1>Place your <span>Orders</span></h1>
 
                 {% for link in links %}
                 <div class="col-sm-4" style="padding-bottom: 25px;">

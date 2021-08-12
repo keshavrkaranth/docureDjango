@@ -6,8 +6,8 @@
 
 
 	<title>AYURHEALTH</title>
-    <!-- CSS -->
-    {% include 'includes/css.html' %}
+	<!-- CSS -->
+	{% include 'includes/css.html' %}
 
 
 
@@ -22,7 +22,7 @@
 		{% include 'includes/nav.html' %}
 
 
-        <!-- Body -->
+		<!-- Body -->
 		{% block content %}
 
 		{% endblock %}
@@ -31,8 +31,18 @@
 		{% include 'includes/footer.html' %}
 
 	</div>
-    <!-- JS -->
+	<!-- JS -->
 	{% include 'includes/js.html' %}
+	<script>
+		$(document).ready(function () {
+			$('.my-zoom-1').WMZoom();
+			$('.my-zoom-2').WMZoom({
+				config: {
+					inner: true
+				}
+			});
+		});
+	</script>
 
 </body>
 

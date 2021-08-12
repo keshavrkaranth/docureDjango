@@ -10,6 +10,7 @@ from cart.models import Cart, CartItem
 import requests
 import re
 
+
 # Create your views here.
 
 
@@ -25,16 +26,22 @@ def signup(request):
             password = form.cleaned_data['password']
             confirm_password = form.cleaned_data['confirm_password']
             username = email.split('@')[0]
-            if password != confirm_password:
-                messages.error(request, 'Two password should be same!')
+            if password == confirm_password:
+                if not Account.objects.filter(email=email).exists():
+                    if not Account.objects.filter(phone_number=phone_number).exists():
+                        user = Account.objects.create_user(name=name, username=username, email=email, password=password)
+                        user.phone_number = phone_number
+                        user.is_active = True
+                        user.save()
+                        messages.success(request, 'Registration Successful')
+                        return redirect('login')
+                    else:
+                        messages.error(request,'Mobile number already exists')
+                else:
+                    messages.error(request,'Email id already exists')
             else:
-                user = Account.objects.create_user(
-                    name=name, username=username, email=email, password=password)
-                user.phone_number = phone_number
-                user.is_active = True
-                user.save()
-                messages.success(request, 'Registration Successful')
-                return redirect('login')
+                messages.error(request, 'Two password should be same!')
+
         else:
             form = Signupform()
 
@@ -63,7 +70,6 @@ def user_login(request):
             except:
                 pass
             auth.login(request, user)
-            messages.success(request, 'Login Successful')
             url = request.META.get('HTTP_REFERER')
             try:
                 query = requests.utils.urlparse(url).query
@@ -82,5 +88,4 @@ def user_login(request):
 @login_required(login_url='login')
 def logout(request):
     auth.logout(request)
-    messages.success(request, 'you are logged out')
     return redirect('homepage')
