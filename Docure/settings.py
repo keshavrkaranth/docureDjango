@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--+2azm@xdxf4(p)&$ni2liist*)9^re+s)xv)$x2cw(42qb2b0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://ayurhealth.herokuapp.com/", '127.0.0.1']
 
 
 # Application definition
