@@ -1502,13 +1502,13 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/store/models.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Docure/settings.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/store/admin.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/docureapp/urls.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/category/admin.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/templates/base.html" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/docureapp/urls.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/store/admin.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/docureapp/views.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/templates/base.html" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Docure/settings.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/store/models.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1slHysbiOnN87HzwI5nCeFkOHpo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -1617,6 +1617,10 @@
       <workItem from="1624808871184" duration="578000" />
       <workItem from="1625401212671" duration="1057000" />
       <workItem from="1625463404997" duration="7000" />
+      <workItem from="1629260238503" duration="518000" />
+      <workItem from="1629260888901" duration="949000" />
+      <workItem from="1629262552195" duration="10000" />
+      <workItem from="1629264772157" duration="5982000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1622737281945</created>

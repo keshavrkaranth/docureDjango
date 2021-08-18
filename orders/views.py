@@ -82,7 +82,7 @@ def razorpay_payment(request, order_no, total=0, quantity=0):
         order_data = Order.objects.get(
             user=request.user, order_number=order_no, is_ordered=False)
         payment = Payment.objects.create(user=request.user, payment_id=data.get(
-            'razorpay_payment_id'), payment_method='Razorpay', amount_paid=order_data.total)
+            'razorpay_payment_id'), payment_method='Razorpay', amount_paid=order_data.total,status='Completed')
         payment.save()
         order_data.payment = payment
         order_data.is_ordered = True

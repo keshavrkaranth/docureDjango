@@ -22,6 +22,8 @@ def products(request, category_slug=None):
         product = Products.objects.all().filter(
             is_avilable=True,).order_by('-created_date')
         product_count = product.count()
+        for i in product:
+            print(i.image.url)
 
     data = {
         'product': product,
